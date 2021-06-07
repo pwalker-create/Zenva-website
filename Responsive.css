@@ -1,0 +1,114 @@
+body {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin:0px;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+.nav {
+    background-color: cadetblue;
+    color:white;
+    max-width: 100vw;
+}
+
+.nav ul { /*new way to select sub elements, i like it*/
+    padding: 0px;
+    margin: 0px; 
+
+    list-style-type: none; /*get's rid of dot points*/
+    font-size: 0px; /*apparent hack, helps when on big screens, removes gaps between blocks */
+}
+
+.nav ul li {
+    padding: 16px;
+    text-align: center;
+    font-size: 1.2rem; /*1.2x the root size (set back in the body)*/
+    border-bottom: 1px solid black;
+    transition: background-color .2s; /*makes a softer transition, really like it*/
+}
+
+.nav ul li:hover { /*sudo selector, only when x happens is this applied*/
+    background-color: black;
+}
+
+.image-area {
+    background-image: url("background.jpg");
+    background-color: black; /* if the image doesn't load or is taking too long*/
+    background-position: center center;
+    background-size: cover; /*scales the picture to fit*/
+    padding-top: 200px;
+    padding-bottom: 200px;    
+}
+
+.centered-container{ /*this is set prior to the classes that use it, so that you can easily override it if you want*/
+    max-width: 1020px;
+    margin: 0px auto 0px auto;
+    padding: 0px 16px;
+}
+
+.image-text {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 2.5rem;
+    max-width: 1020px;
+    margin: 0px auto 0px auto; /* to centre the container horizontally */
+    padding: 0px 16px;
+}
+
+.intro-text {
+    max-width: 1020px;
+    margin: 0px auto 0px auto;
+    color: grey;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.single-service {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+    padding: 20px;
+}
+
+.single-service p {
+    padding: 0px 16px;
+}
+
+.container { /*I'm trying to make the footer go to the bottom*/
+    background-color: grey;
+    width: 100%;
+    position: bottom;
+    display: flex;
+    flex-direction: center;
+    justify-content: space-around;
+}
+
+
+
+@media screen and (min-width: 700px) {/*all the following rules only apply when the previous conditions are met */
+    .nav ul { 
+        text-align: right;
+
+    }
+    .nav ul li {
+        display: inline-block; /*not gonna use all the horizontal space, instead pile up next to each other in the horizontal space */
+        border-bottom: 0px;
+        border-left: 1px solid black;
+        text-align: left;
+    }
+
+    .single-service{
+        width: 45%;
+        float: left; /* makes them stick to the left, since they occupy 50% there won't be any more than 2 */
+    }
+}
